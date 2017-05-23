@@ -13,6 +13,14 @@ A short cheat-sheet with Xcode 8.2 Playground ([Design-Patterns.playground.zip](
 * [Creational](#creational)
 * [Structural](#structural)
 
+
+```swift
+
+ Behavioral |
+ [Creational](Creational) |
+ [Structural](Structural)
+```
+
 Behavioral
 ==========
 
@@ -126,6 +134,9 @@ atm.canWithdraw(amount: 30)  // Can withdraw - 1x20, 2x10
 
 >**Further Examples:** [Design Patterns in Swift](https://github.com/kingreza/Swift-Chain-Of-Responsibility)
 
+```swift
+
+```
 
 👫 Command
 ----------
@@ -291,6 +302,10 @@ var result = expression.evaluate(context)
 
 >**Further Examples:** [Design Patterns in Swift](https://github.com/kingreza/Swift-Interpreter)
 
+```swift
+
+```
+
 🍫 Iterator
 -----------
 
@@ -403,6 +418,9 @@ spamMonster(message: "I'd Like to Add you to My Professional Network", worker: m
 
 >**Further Examples:** [Design Patterns in Swift](https://github.com/kingreza/Swift-Mediator)
 
+```swift
+
+```
 
 💾 Memento
 ----------
@@ -557,6 +575,9 @@ testChambers.testChamberNumber += 1
 
 >**Further Examples:** [Design Patterns in Swift](https://github.com/kingreza/Swift-Observer)
 
+```swift
+
+```
 
 🐉 State
 ---------
@@ -569,7 +590,7 @@ The pattern allows the class for an object to apparently change at run-time.
 ```swift
 
 final class Context {
-	private var state: State = UnauthorizedState()
+    private var state: State = UnauthorizedState()
 
     var isAuthorized: Bool {
         get { return state.isAuthorized(context: self) }
@@ -579,35 +600,35 @@ final class Context {
         get { return state.userId(context: self) }
     }
 
-	func changeStateToAuthorized(userId: String) {
-		state = AuthorizedState(userId: userId)
-	}
+    func changeStateToAuthorized(userId: String) {
+        state = AuthorizedState(userId: userId)
+    }
 
-	func changeStateToUnauthorized() {
-		state = UnauthorizedState()
-	}
+    func changeStateToUnauthorized() {
+        state = UnauthorizedState()
+    }
 
 }
 
 protocol State {
-	func isAuthorized(context: Context) -> Bool
-	func userId(context: Context) -> String?
+    func isAuthorized(context: Context) -> Bool
+    func userId(context: Context) -> String?
 }
 
 class UnauthorizedState: State {
-	func isAuthorized(context: Context) -> Bool { return false }
+    func isAuthorized(context: Context) -> Bool { return false }
 
-	func userId(context: Context) -> String? { return nil }
+    func userId(context: Context) -> String? { return nil }
 }
 
 class AuthorizedState: State {
-	let userId: String
+    let userId: String
 
-	init(userId: String) { self.userId = userId }
+    init(userId: String) { self.userId = userId }
 
-	func isAuthorized(context: Context) -> Bool { return true }
+    func isAuthorized(context: Context) -> Bool { return true }
 
-	func userId(context: Context) -> String? { return userId }
+    func userId(context: Context) -> String? { return userId }
 }
 ```
 
@@ -625,6 +646,9 @@ userContext.changeStateToUnauthorized()
 
 >**Further Examples:** [Design Patterns in Swift](https://github.com/kingreza/Swift-State)
 
+```swift
+
+```
 
 💡 Strategy
 -----------
@@ -677,6 +701,10 @@ upper.print("O tempora, o mores!")
 ```
 
 >**Further Examples:** [Design Patterns in Swift](https://github.com/kingreza/Swift-Strategy)
+
+```swift
+
+```
 
 🏃 Visitor
 ----------
@@ -771,6 +799,10 @@ The abstract factory pattern is used to provide a client with a set of related o
 The "family" of objects created by the factory are determined at run-time.
 
 ### Example
+
+```swift
+
+```
  
 Protocols
 
@@ -903,6 +935,10 @@ let deathStar = DeathStar(builder:empire)
 
 >**Further Examples:** [Design Patterns in Swift](https://github.com/kingreza/Swift-Builder)
 
+```swift
+
+```
+
 🏭 Factory Method
 -----------------
 
@@ -1011,6 +1047,10 @@ Eduardo.name = "Eduardo"
 
 >**Further Examples:** [Design Patterns in Swift](https://github.com/kingreza/Swift-Prototype)
 
+```swift
+
+```
+
 💍 Singleton
 ------------
 
@@ -1117,6 +1157,10 @@ oldFormat.angleV
 ```
 
 >**Further Examples:** [Design Patterns in Swift](https://github.com/kingreza/Swift-Adapter)
+
+```swift
+
+```
 
 🌉 Bridge
 ----------
@@ -1514,3 +1558,6 @@ Info
 ====
 
 📖 Descriptions from: [Gang of Four Design Patterns Reference Sheet](http://www.blackwasp.co.uk/GangOfFour.aspx)
+
+
+```swift
